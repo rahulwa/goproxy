@@ -376,6 +376,7 @@ func (proxy *ProxyHttpServer) NewConnectDialToProxyWithHandler(https_proxy strin
 			if u.User != nil {
 				basic := "Basic " + base64.StdEncoding.EncodeToString([]byte(u.User.String()))
 				connectReq.Header.Add("Proxy-Authorization", basic)
+			}
 			if connectReqHandler != nil {
 				connectReqHandler(connectReq)
 			}
@@ -425,6 +426,7 @@ func (proxy *ProxyHttpServer) NewConnectDialToProxyWithHandler(https_proxy strin
 			if u.User != nil {
 				basic := "Basic " + base64.StdEncoding.EncodeToString([]byte(u.User.String()))
 				connectReq.Header.Add("Proxy-Authorization", basic)
+			}
 			if connectReqHandler != nil {
 				connectReqHandler(connectReq)
 			}
